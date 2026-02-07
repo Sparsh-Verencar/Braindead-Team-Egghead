@@ -6,4 +6,33 @@ movie name
 genre
 tags
 
-streamlit.
+streamlit run app.py
+
+
+def recommend_user(self, user_id, top_n=10):
+        """
+        Recommend movies using the SVD part of hybrid bundle.
+        Could be extended to combine TF-IDF content similarity as well.
+        """
+        if not hasattr(self.svd, "predict"):
+            raise ValueError("Hybrid bundle's SVD model is invalid")
+
+        # Recommend top N movies based on SVD predictions
+        movies_df = self.movies
+        watched = set(self.bundle["ratings"][self.bundle["ratings"]["userId"] == user_id]["movieId"])
+        candidates = list(set(movies_df[self.movie_id_col]) - watched)
+
+        preds = [(m, self.svd.predict(user_id, m).est) for m in candidates]
+        top_n_preds = sorted(preds, key=lambda x: x[1], reverse=True)[:top_n]
+
+        results = []
+        for movie_id, score in top_n_preds:
+            title = movies_df.loc[movies_df[self.movie_id_col] == movie_id, "title"].values[0]
+            genre = None
+            if self.genre_col:
+                genre = movies_df.loc[movies_df[self.movie_id_col] == movie_id, self.genre_col].values[0]
+            explanation = "Recommended based on hybrid SVD + content signals"
+            results.append((movie_id, title, round(score, 3), explanation, genre))
+
+        df = pd.DataFrame(results, columns=[self.movie_id_col, "title", "svd_score", "explanation", "genre"])
+        return df
