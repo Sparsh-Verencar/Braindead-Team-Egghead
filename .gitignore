@@ -1,4 +1,6 @@
 venv/
 *.pkl
+__pycache__/
+*.py[cod]
 
 

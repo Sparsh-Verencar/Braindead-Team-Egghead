@@ -1,0 +1,9 @@
+venv\Scripts\activate
+
+model selector
+
+movie name
+genre
+tags
+
+streamlit.
