@@ -1,7 +1,7 @@
-movieid,genreId,genre
+movieId,genreId,genre
 1,0,Adventure
 1,1,Animation
-1,2,Children
+1,2,Children 
 1,3,Comedy
 1,4,Fantasy
 2,0,Adventure

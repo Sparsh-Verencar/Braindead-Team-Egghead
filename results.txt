@@ -1,0 +1,13 @@
+second set
+
+Generating Top-K Recs: 100%|██████████| 610/610 [01:31<00:00,  6.69it/s]
+Generating Top-K Recs: 100%|██████████| 610/610 [02:37<00:00,  3.87it/s]
+SVD — Prec@10: 0.006393, Rec@10: 0.015984, NDCG@10: 0.011612, MAP@10: 0.005082, Coverage: 0.030, ILD: 0.713, Novelty: 7.325
+Hybrid — Prec@10: 0.006393, Rec@10: 0.015984, NDCG@10: 0.012335, MAP@10: 0.005801, Coverage: 0.030, ILD: 0.491, Novelty: 7.386
+
+3rd set
+
+Generating Top-K Recs (svd): 100%|██████████| 610/610 [00:24<00:00, 24.68it/s]
+Generating Top-K Recs (hybrid): 100%|██████████| 610/610 [00:36<00:00, 16.63it/s]
+SVD — Prec@10: 0.007213, Rec@10: 0.018033, NDCG@10: 0.016093, MAP@10: 0.008246, Coverage: 0.005, ILD: 0.783, Novelty: 7.320
+Hybrid — Prec@10: 0.007213, Rec@10: 0.018033, NDCG@10: 0.013244, MAP@10: 0.006002, Coverage: 0.013, ILD: 0.452, Novelty: 7.335
