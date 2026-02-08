@@ -1,0 +1,17 @@
+# Data and Models
+data/
+models/
+*.pkl
+*.csv
+
+# Python environment and cache
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# IDE settings
+.vscode/
+.idea/
+.DS_Store
